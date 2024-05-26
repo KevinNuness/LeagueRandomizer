@@ -31,6 +31,11 @@ public class frmMenu extends javax.swing.JFrame {
 
         bExit.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         bExit.setText("Exit");
+        bExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bExitActionPerformed(evt);
+            }
+        });
 
         Msg2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         Msg2.setText("Let's random it?");
@@ -53,7 +58,7 @@ public class frmMenu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(256, 256, 256)
                         .addComponent(Msg2)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,8 +79,14 @@ public class frmMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
-
+     frmRandomize menu = new frmRandomize();
+     menu.setVisible(true);
+     this.dispose();
     }//GEN-LAST:event_bStartActionPerformed
+
+    private void bExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_bExitActionPerformed
 
     
     public static void main(String args[]) {
