@@ -1,96 +1,52 @@
 package model;
 
-/**
- * The Randomizer class represents a combination of a lane and a champion for use in a randomization application.
- */
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
 public class Randomizer {
     
-    /**
-     * The lane selected by the randomizer.
-     */
-    private String lane;
-    
-    /**
-     * The champion selected by the randomizer.
-     */
-    private String champion;
-    
-    /**
-     * The unique identifier for the randomizer instance.
-     */
-    private int id;
-    
-    /**
-     * Constructs a new Randomizer instance with default values.
-     */
-    public Randomizer(){
-        this("", "", 0);
-    }
-    
-    /**
-     * Constructs a new Randomizer instance with the specified lane, champion, and identifier.
-     * 
-     * @param lane The lane selected by the randomizer.
-     * @param champion The champion selected by the randomizer.
-     * @param id The unique identifier for the randomizer instance.
-     */
-    public Randomizer(String lane, String champion, int id){
-        this.lane = lane;
-        this.champion = champion;
-        this.id = id;
-    }
-    
-    /**
-     * Retrieves the lane selected by the randomizer.
-     * 
-     * @return The lane selected by the randomizer.
-     */
-    public String getLane(){
-        return lane;
-    }
-    
-    /**
-     * Sets the lane selected by the randomizer.
-     * 
-     * @param lane The lane selected by the randomizer.
-     */
-    public void setLane(String lane){
-        this.lane = lane;
-    }
-    
-    /**
-     * Retrieves the champion selected by the randomizer.
-     * 
-     * @return The champion selected by the randomizer.
-     */
-    public String getChampion(){
-        return champion;
-    }
-    
-    /**
-     * Sets the champion selected by the randomizer.
-     * 
-     * @param champion The champion selected by the randomizer.
-     */
-    public void setChampion(String champion){
-        this.champion = champion;
-    }
-    
-    /**
-     * Retrieves the unique identifier for the randomizer instance.
-     * 
-     * @return The unique identifier for the randomizer instance.
-     */
-    public int getId(){
-        return id;
-    }
-    
-    /**
-     * Sets the unique identifier for the randomizer instance.
-     * 
-     * @param id The unique identifier for the randomizer instance.
-     */
-    public void setId(int id){
-        this.id = id;
-    }
-}
+        Random random = new Random();
+       
+        String[] ChampionsNames = { 
+            
+        "Aatrox", "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie", "Aphelios", "Ashe",
+        "Aurelion Sol", "Azir", "Bardo", "Blitzcrank", "Brand", "Braum", "Caitlyn",
+        "Camille", "Cassiopeia", "Cho'Gath", "Corki", "Darius", "Diana", "Dr. Mundo", "Draven",
+        "Ekko", "Elise", "Evelynn", "Ezreal", "Fiddlesticks", "Fiora", "Fizz", "Galio",
+        "Gangplank", "Garen","Gnar", "Gragas", "Graves", "Gwen", "Hecarim", "Heimerdinger",
+        "Illaoi", "Irelia", "Ivern", "Janna", "Jarvan IV", "Jax", "Jayce", "Jhin", "Jinx",
+        "Kai'Sa", "Kalista", "Karma", "Karthus", "Kassadin", "Katarina", "Kayle", "Kayn",
+        "Kennen", "Kha'Zix", "Kindred", "Kled", "Kog'Maw", "LeBlanc", "Lee Sin", "Leona",
+        "Lillia", "Lissandra", "Lucian", "Lulu", "Lux", "Malphite", "Malzahar", "Maokai",
+        "Master Yi", "Miss Fortune", "Mordekaiser", "Morgana", "Nami", "Nasus", "Nautilus",
+        "Neeko", "Nidalee", "Nocturne", "Nunu & Willump", "Olaf", "Orianna", "Ornn", "Pantheon",
+        "Poppy", "Pyke", "Qiyana", "Quinn", "Rakan", "Rammus", "Rek'Sai", "Rell", "Renekton",
+        "Rengar", "Riven", "Rumble", "Ryze", "Samira", "Sejuani", "Senna", "Seraphine", "Sett",
+        "Shaco", "Shen", "Shyvana", "Singed", "Sion", "Sivir", "Skarner", "Sona", "Soraka",
+        "Swain", "Sylas", "Syndra", "Tahm Kench", "Taliyah", "Talon", "Taric", "Teemo", "Thresh",
+        "Tristana", "Trundle", "Tryndamere", "Twisted Fate", "Twitch", "Udyr", "Urgot", "Varus",
+        "Vayne", "Veigar", "Vel'Koz", "Vi", "Viego", "Viktor", "Vladimir", "Volibear", "Warwick",
+        "Wukong", "Xayah", "Xerath", "Xin Zhao", "Yasuo", "Yone", "Yorick", "Yuumi", "Zac", "Zed",
+        "Ziggs", "Zilean", "Zoe", "Zyra"
+            
+        };
+        
+        ArrayList<String> Champions = new ArrayList<>(Arrays.asList(ChampionsNames));
+        
+        public String randomChamp(){
+        
+        int selection = random.nextInt(154);
+        return Champions.get(selection);            
+     }   
+        
+        String[] LanesNames = { "Mid", "Top", "Jungler", "Support", "Adc" };
+            
+            ArrayList <String> Lanes = new ArrayList <>(Arrays.asList(LanesNames));
+            
+        public String randomLane(){
+        
+            int selection = random.nextInt(4);
+            return Lanes.get(selection);
+        }    
+   }

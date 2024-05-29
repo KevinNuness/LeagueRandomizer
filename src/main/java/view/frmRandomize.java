@@ -1,5 +1,7 @@
 package view;
 
+import model.Randomizer;
+
 public class frmRandomize extends javax.swing.JFrame {
 
 
@@ -28,6 +30,11 @@ public class frmRandomize extends javax.swing.JFrame {
         Msg2.setText("Lane:");
 
         bRoll.setText("Roll");
+        bRoll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRollActionPerformed(evt);
+            }
+        });
 
         bCancel.setText("Cancel");
         bCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -91,6 +98,16 @@ public class frmRandomize extends javax.swing.JFrame {
         menu.setVisible (true);
         this.dispose();
     }//GEN-LAST:event_bCancelActionPerformed
+
+    private void bRollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRollActionPerformed
+        
+         Randomizer randomizer = new Randomizer();
+         
+         String champResult = randomizer.randomChamp();
+         String laneResult = randomizer.randomLane();
+         tfChampion.setText(champResult);
+         tfLane.setText(laneResult);
+    }//GEN-LAST:event_bRollActionPerformed
 
     public static void main(String args[]) {
 
