@@ -1,7 +1,7 @@
 package view;
 
 public class frmMenu extends javax.swing.JFrame {
-
+    
     public frmMenu() {
         initComponents();
     }

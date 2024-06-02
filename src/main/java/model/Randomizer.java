@@ -8,7 +8,7 @@ public class Randomizer {
     
         Random random = new Random();
        
-        String[] ChampionsNames = { 
+        public String[] ChampionsNames = { 
             
         "Aatrox", "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie", "Aphelios", "Ashe",
         "Aurelion Sol", "Azir", "Bardo", "Blitzcrank", "Brand", "Braum", "Caitlyn",
@@ -28,15 +28,16 @@ public class Randomizer {
         "Tristana", "Trundle", "Tryndamere", "Twisted Fate", "Twitch", "Udyr", "Urgot", "Varus",
         "Vayne", "Veigar", "Vel'Koz", "Vi", "Viego", "Viktor", "Vladimir", "Volibear", "Warwick",
         "Wukong", "Xayah", "Xerath", "Xin Zhao", "Yasuo", "Yone", "Yorick", "Yuumi", "Zac", "Zed",
-        "Ziggs", "Zilean", "Zoe", "Zyra"
+        "Ziggs", "Zilean", "Zoe", "Zyra", "Gwen", "Akshan", "Vex", "Zeri", "Renata Glasc",
+        "Bel'Veth", "Nilah", "K'Sante", "Milio", "Naafiri", "Briar", "Hwei", "Smolder"
             
         };
         
         ArrayList<String> Champions = new ArrayList<>(Arrays.asList(ChampionsNames));
-        
+               
         public String randomChamp(){
         
-        int selection = random.nextInt(154);
+        int selection = random.nextInt(167);
         return Champions.get(selection);            
      }   
         
@@ -48,5 +49,5 @@ public class Randomizer {
         
             int selection = random.nextInt(4);
             return Lanes.get(selection);
-        }    
-   }
+        }  
+ }
